@@ -188,6 +188,7 @@ input[type="number"] {
 }
 
 .carrinho {
+  color: var(--Light-Blue, #000000);
   display: flex;
   width: 24rem;
   flex-direction: column;
@@ -202,7 +203,7 @@ input[type="number"] {
 }
 
 .carrinho__titulo {
-  color: var(--Light-Blue, #1875E8);
+  color: var(--Light-Blue, #0a63cf);
   font-family: Inter;
   font-size: 1.5rem;
   font-style: normal;

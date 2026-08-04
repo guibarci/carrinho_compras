@@ -1,3 +1,7 @@
+
+limpar();
+
+// Adiciona o produto selecionado ao carrinho e atualiza o total.
 function adicionar(){
     let produto = document.getElementById('produto').value;
     let partes = produto.split(' - ');
@@ -21,12 +25,14 @@ function adicionar(){
     atualizaTotal(precoProduto, quantidade);
 }
 
+// Calcula e atualiza o valor total do carrinho com o novo item.
 function atualizaTotal(precoProduto, quantidade){
     let totalAtual = parseFloat(document.getElementById('valor-total').innerHTML.replace('R$', '').replace(',', '.'));
     let calculaTotal = (precoProduto * quantidade) + totalAtual;
     document.getElementById('valor-total').innerHTML = `R$${calculaTotal.toFixed(2).replace('.', ',')}`;
 }
 
+// Limpa todos os campos do formulário e reseta o carrinho.
 function limpar(){
     document.getElementById('quantidade').value = '';
     document.getElementById('produto').value = '';
@@ -34,6 +40,7 @@ function limpar(){
     document.getElementById('valor-total').innerHTML = 'R$0,00';
 }
 
+// Verifica se o produto já está no carrinho e atualiza sua quantidade se existir.
 function verificaProduto(nomeProduto, precoProduto, quantidade){
     let produtosCarrinho = document.querySelectorAll('.carrinho__produtos__produto');
 
@@ -53,6 +60,7 @@ function verificaProduto(nomeProduto, precoProduto, quantidade){
     }
 }
 
+// Valida se a quantidade informada é um número válido maior que zero.
 function validaCampoVazio(quantidade){
     if(isNaN(quantidade) || quantidade <= 0){
         alert('Informe a quantidade do produto!')
